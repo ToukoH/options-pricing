@@ -1,4 +1,9 @@
-    path = "C:\Users\Vlad\Desktop\Simulation\Case Study\data\DCOILBRENTEU.csv";
+clear;
+clearvars;
+addpath('./data')
+
+path = "/DCOILBRENTEU.csv";
+data = readtable(path);
 
 n = 5000;
 length = 600;

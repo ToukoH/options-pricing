@@ -1,7 +1,8 @@
 clear;
 clearvars;
+addpath('./data')
 
-path = "C:\Users\Vlad\Desktop\Simulation\Case Study\data\DCOILBRENTEU.csv";
+path = "/DCOILBRENTEU.csv";
 data = readtable(path);
 
 data.Properties.VariableNames = ["date","crude"];
