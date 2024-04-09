@@ -1,3 +1,5 @@
+
+
 function sim_matrix = simulate_paths(path, starting_price, length, n)
     data = readtable(path);
     
