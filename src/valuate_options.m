@@ -9,7 +9,7 @@ data = readtable(path);
 
 initial_prices = [40, 70];
 n = 5000;
-length_sim = 50;
+length_sim = 120;
 strikes = [50, 90];
 sides = [1, 2];
 
@@ -110,12 +110,12 @@ end
 
 function payouts = valuate_asian_floating_strike(price_paths, call_put) % 1 for call, 2 for put
     strike = mean(price_paths);
-    spot = mean(price_paths(end, :));
+    spot = price_paths(end, :);
 
     if call_put == 1
-        payouts = max(spot- strike, 0);
+        payouts = max(spot - strike, 0);
     else
-        payouts = max(spot - spot, 0);
+        payouts = max(strike - spot, 0);
     end
 end
 

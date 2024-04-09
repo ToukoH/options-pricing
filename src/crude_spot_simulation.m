@@ -11,7 +11,7 @@ returns = pct_change(data.crude); % calculate returns from spot prices
 returns = returns(~isnan(returns)); % delete NaN values
 
 x_values = linspace(-0.2, 0.2, 500);
-dist = fitdist(returns, 'kernel');
+dist = fitdist(returns, 'Normal');
 figure;
 histogram(returns, 'Normalization','pdf');
 hold on;
