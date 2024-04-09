@@ -10,12 +10,15 @@ data.Properties.VariableNames = ["date","crude"];
 returns = pct_change(data.crude); % calculate returns from spot prices
 returns = returns(~isnan(returns)); % delete NaN values
 
-x_values = linspace(-0.2, 0.2, 500);
+x_values = linspace(-0.3, 0.3, 500);
 dist = fitdist(returns, 'Normal');
+pdf_values = pdf(dist, x_values);
+
 figure;
-histogram(returns, 'Normalization','pdf');
+histfit(returns);
 hold on;
-plot(x_values, pdf(dist, x_values))
+%yyaxis right;
+%plot(x_values,pdf_values)
 hold off;
 
 function p = pct_change(x)
