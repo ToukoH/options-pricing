@@ -11,7 +11,7 @@ data = readtable(path);
 initial_prices = [70];
 n = 5000;
 length_sim = 50;
-strikes = [60, 80];
+strikes = [60, 90];
 sides = [1, 2];
 
 results = zeros(length(initial_prices) + length(strikes) + length(sides), 7);
